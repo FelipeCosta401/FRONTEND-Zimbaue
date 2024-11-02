@@ -30,7 +30,12 @@ const Sidebar = () => {
           linkTo="/eventos"
           focus={pathname === "/eventos"}
         />
-        <MenuItem text="Contribuir" icon={FaHandHoldingUsd} linkTo="#" />
+        <MenuItem
+          text="Contribuir"
+          icon={FaHandHoldingUsd}
+          linkTo="/contribuir"
+          focus={pathname === "/contribuir"}
+        />
         <MenuItem
           text="Sobre nós"
           icon={IoMdInformationCircleOutline}
