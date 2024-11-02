@@ -10,6 +10,7 @@ import Login from "./pages/Login/Login.tsx";
 import Home from "./pages/Home/Home.tsx";
 import Events from "./pages/Events/Events.tsx";
 import Collaborate from "./pages/Collaborate/Collaborate.tsx";
+import About from "./pages/About/About.tsx";
 
 const router = createBrowserRouter([
   {
@@ -23,12 +24,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/eventos",
-        element: <Events />
+        element: <Events />,
       },
       {
         path: "/contribuir",
-        element: <Collaborate />
-      }
+        element: <Collaborate />,
+      },
+      { 
+        path: "/sobre-nos",
+        element: <About />,
+      },
     ],
   },
   {

@@ -31,7 +31,7 @@ const UserSection = () => {
     <>
       {user && user.name !== "" ? (
         <div className="w-full h-full space-y-2">
-          <section className="h-1/4 p-2 justify-between flex items-center border rounded-lg hover:bg-background hover:cursor-pointer">
+          <section className="h-1/3 p-2 justify-between flex items-center border rounded-lg hover:bg-background hover:cursor-pointer">
             <span className="flex gap-2 items-center">
               <FaUser size={45} />
               <h2>{user.name}</h2>

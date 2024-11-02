@@ -9,6 +9,7 @@ import { IoMdInformationCircleOutline } from "react-icons/io";
 
 const Sidebar = () => {
   const { pathname } = useLocation();
+
   return (
     <div className="h-screen w-[350px] fixed hidden left-0 shadow-xl p-4 bg-white lg:flex flex-col justify-between">
       <section className="h-1/4">
@@ -39,7 +40,8 @@ const Sidebar = () => {
         <MenuItem
           text="Sobre nós"
           icon={IoMdInformationCircleOutline}
-          linkTo="#"
+          linkTo="/sobre-nos"
+          focus={pathname === "/sobre-nos"}
         />
       </main>
       <footer className="h-1/4">
