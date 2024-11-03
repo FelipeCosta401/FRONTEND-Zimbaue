@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <main className="space-y-4">
       <h1 className="text-slate-800 text-3xl font-bold">Novidades</h1>
-      <section className="py-4 columns-2 gap-4 space-y-4">
+      <section className="py-4 sm:columns-2 gap-4 space-y-4">
         {Array.from({ length: 5 }).map((_, i) => (
           <Card className="break-inside-avoid" key={i + 1}>
             <CardHeader>

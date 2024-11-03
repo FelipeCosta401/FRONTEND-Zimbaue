@@ -13,7 +13,7 @@ function App() {
           <Sidebar />
           <MobileNavbar />
         </nav>
-        <main className="h-screen lg:ml-[360px] p-6">
+        <main className="h-full p-6 pb-32 lg:pb-0 lg:ml-[360px] ">
           <Outlet />
         </main>
       </div>
