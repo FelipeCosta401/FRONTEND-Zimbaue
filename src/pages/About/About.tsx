@@ -16,15 +16,18 @@ const About = () => {
   return (
     <>
       <div className="space-y-4">
-        <section className="flex gap-4">
-          <Card className="w-3/4">
-            <CardHeader className="">
+        <section className="flex flex-col xl:flex-row gap-4">
+          <Card className="w-full xl:w-3/4">
+            <CardHeader className="flex-row items-center gap-4">
+              <Avatar className="block sm:hidden w-20 h-20 xs:w-28 xs:h-28">
+                <AvatarImage src={zimbaueProfile} />
+              </Avatar>
               <CardTitle className="text-slate-800 font-bold text-3xl">
                 Sobre nós
               </CardTitle>
             </CardHeader>
             <CardContent className="flex gap-4">
-              <Avatar className="w-32 h-32">
+              <Avatar className="hidden sm:block w-32 h-32">
                 <AvatarImage src={zimbaueProfile} />
               </Avatar>
               <CardDescription className="text-xl">
@@ -35,7 +38,7 @@ const About = () => {
               </CardDescription>
             </CardContent>
           </Card>
-          <Card className="w-1/4">
+          <Card className="w-full xl:w-1/4">
             <CardHeader>
               <CardTitle>Redes sociais</CardTitle>
             </CardHeader>
