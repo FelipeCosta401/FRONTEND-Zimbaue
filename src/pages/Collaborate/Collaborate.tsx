@@ -7,6 +7,7 @@ import {
 import { Button } from "@/components/ui/button";
 import {
   Card,
+  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -70,25 +71,38 @@ const Collaborate = () => {
             <AccordionItem value="1">
               <AccordionTrigger>Por que contribuir?</AccordionTrigger>
               <AccordionContent>
-                Apoiar uma organização sem fins lucrativos que combate o racismo
-                é mais do que uma simples doação; é um passo essencial para
-                transformar nossa sociedade. Ao contribuir, você se junta a um
-                esforço coletivo para promover a igualdade e garantir que todas
-                as pessoas, independentemente de sua origem racial, tenham
-                acesso justo às oportunidades e recursos que merecem.
+                <Card>
+                  <CardContent>
+                    <CardDescription>
+                      Apoiar uma organização sem fins lucrativos que combate o
+                      racismo é mais do que uma simples doação; é um passo
+                      essencial para transformar nossa sociedade. Ao contribuir,
+                      você se junta a um esforço coletivo para promover a
+                      igualdade e garantir que todas as pessoas,
+                      independentemente de sua origem racial, tenham acesso
+                      justo às oportunidades e recursos que merecem.
+                    </CardDescription>
+                  </CardContent>
+                </Card>
               </AccordionContent>
             </AccordionItem>
-            <AccordionItem value="2">
+            <AccordionItem value="2" className="border-none">
               <AccordionTrigger>
                 Como minha contribuição vai ser utilizada?
               </AccordionTrigger>
               <AccordionContent>
-                Nossa organização desempenha um papel vital na educação e
-                conscientização, abordando preconceitos e fomentando a
-                compreensão intercultural. Seu apoio financeiro nos ajuda a
-                expandir essas iniciativas, alcançando mais pessoas e gerando um
-                impacto duradouro na forma como a diversidade é percebida e
-                valorizada.
+                <Card>
+                  <CardContent>
+                    <CardDescription>
+                      Nossa organização desempenha um papel vital na educação e
+                      conscientização, abordando preconceitos e fomentando a
+                      compreensão intercultural. Seu apoio financeiro nos ajuda
+                      a expandir essas iniciativas, alcançando mais pessoas e
+                      gerando um impacto duradouro na forma como a diversidade é
+                      percebida e valorizada.
+                    </CardDescription>
+                  </CardContent>
+                </Card>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
