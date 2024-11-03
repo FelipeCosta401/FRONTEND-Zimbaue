@@ -20,8 +20,8 @@ const Collaborate = () => {
         <h1 className="text-slate-800 text-3xl font-bold">
           Contribua com a instituição
         </h1>
-        <main className="w-full h-[200px] flex gap-4">
-          <Card className="h-full w-1/3 flex flex-col justify-between">
+        <main className="w-full  space-y-4 sm:columns-2 xl:columns-3">
+          <Card className="h-[200px] w-full flex flex-col justify-between break-inside-avoid">
             <CardHeader className="h-1/2">
               <CardTitle>Financeiramente</CardTitle>
               <CardDescription>
@@ -35,7 +35,7 @@ const Collaborate = () => {
               <Button type="button">Contribuir</Button>
             </CardFooter>
           </Card>
-          <Card className="h-full w-1/3 flex flex-col justify-between">
+          <Card className="h-[200px] w-full flex flex-col justify-between break-inside-avoid">
             <CardHeader className="h-1/2">
               <CardTitle>Engajamento</CardTitle>
               <CardDescription>
@@ -49,7 +49,7 @@ const Collaborate = () => {
               <Button type="button">Compartilhar</Button>
             </CardFooter>
           </Card>
-          <Card className="h-full w-1/3 flex flex-col justify-between">
+          <Card className="h-[200px] w-full flex flex-col justify-between break-inside-avoid">
             <CardHeader className="h-1/2">
               <CardTitle>Doações</CardTitle>
               <CardDescription>
@@ -92,7 +92,7 @@ const Collaborate = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-        </section>  
+        </section>
       </div>
     </>
   );
