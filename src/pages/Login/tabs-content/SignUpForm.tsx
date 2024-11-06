@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import AuthService from "@/services/AuthService";
+
 import {
   Form,
   FormControl,
@@ -15,6 +17,8 @@ import { IoMdMail, IoMdEye } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import { TbLock } from "react-icons/tb";
 import { zodResolver } from "@hookform/resolvers/zod";
+
+const authService = new AuthService();
 
 const FormSchema = z.object({
   name: z.string().nonempty("O campo nome é obrigatório!"),
@@ -45,7 +49,19 @@ const SignUpForm = () => {
         message: "As senhas não condizem",
       });
     } else {
-      console.log(data);
+      const reqObj = {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        role: 1
+      }
+
+      try {
+        authService.register(reqObj);
+      } catch (error) {
+        
+      }
+
     }
   }
 
