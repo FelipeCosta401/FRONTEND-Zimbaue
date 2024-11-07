@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { UserAuthContext } from "@/store/UserAuthContext";
 
+import AuthService from "@/services/AuthService";
+
 import { useNavigate } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
@@ -12,38 +14,43 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel  
+  FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import { Toaster } from "@/components/ui/sonner";
 
 import { IoMdEye } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import { TbLock } from "react-icons/tb";
 
 const FormSchema = z.object({
-  name: z.string().nonempty("Preencha o campo de login"),
+  email: z.string().nonempty("Preencha o campo de login"),
   password: z.string().nonempty("Preencha o campo da senha").min(8, {
     message: "A senha deve conter pelo menos 8 caracteres",
   }),
 });
 
-const SignInForm = () => {
-  const { login: loginContextMethod } = useContext(UserAuthContext);
-  const navigate = useNavigate();
+const authService = new AuthService();
 
+const SignInForm = () => {
   //React hook form instance
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      name: "",
+      email: "",
       password: "",
     },
   });
 
-  function login(data: z.infer<typeof FormSchema>) {
-    loginContextMethod(data);
-    navigate("/");
+  async function login(data: z.infer<typeof FormSchema>) {
+    try {
+      const { token, user, status } = await authService.login(data);
+      status === 200 && toast.success("Entrou com sucesso!");
+    } catch (error: any) {
+      toast.error(error.message);
+    }
   }
 
   return (
@@ -55,12 +62,14 @@ const SignInForm = () => {
         <section className="space-y-4 text-primary-foreground">
           <FormField
             control={form.control}
-            name="name"
+            name="email"
             render={({ field }) => (
               <FormItem>
                 <div className="flex gap-2 items-center">
                   <FaUser size={25} />
-                  <FormLabel className="text-xl text-primary-foreground" >E-mail / nome</FormLabel>
+                  <FormLabel className="text-xl text-primary-foreground">
+                    E-mail
+                  </FormLabel>
                 </div>
                 <FormControl>
                   <Input
@@ -68,7 +77,7 @@ const SignInForm = () => {
                     {...field}
                     placeholder="Insira seu email ou nome"
                     className={`${
-                      form.formState.errors.name &&
+                      form.formState.errors.email &&
                       "outline-red-500 focus-visible:outline-red-500"
                     } text-slate-800`}
                   />
@@ -83,7 +92,9 @@ const SignInForm = () => {
               <FormItem>
                 <div className="flex gap-2 items-center">
                   <TbLock size={30} />
-                  <FormLabel className="text-xl text-primary-foreground">Senha</FormLabel>
+                  <FormLabel className="text-xl text-primary-foreground">
+                    Senha
+                  </FormLabel>
                 </div>
                 <div className="flex gap-2 items-center">
                   <FormControl>
@@ -109,6 +120,7 @@ const SignInForm = () => {
           Entrar
         </Button>
       </form>
+      <Toaster richColors />
     </Form>
   );
 };

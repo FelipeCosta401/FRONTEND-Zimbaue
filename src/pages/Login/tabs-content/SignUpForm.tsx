@@ -8,9 +8,11 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel
+  FormLabel,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
+import { Toaster } from "@/components/ui/sonner";
 import { Button } from "@/components/ui/button";
 
 import { IoMdMail, IoMdEye } from "react-icons/io";
@@ -42,7 +44,7 @@ const SignUpForm = () => {
     },
   });
 
-  function register(data: z.infer<typeof FormSchema>) {
+  async function register(data: z.infer<typeof FormSchema>) {
     //Verifies if the passwords fields matches
     if (data.password !== data.confirmPassword) {
       form.setError("root", {
@@ -53,15 +55,16 @@ const SignUpForm = () => {
         name: data.name,
         email: data.email,
         password: data.password,
-        role: 1
-      }
+        role: 1,
+      };
 
       try {
-        authService.register(reqObj);
-      } catch (error) {
+        const { response, status } = await authService.register(reqObj);        
+        status === 201 && toast.success("Cadastrado com sucesso!");
         
+      } catch (error: any) {
+        toast.error(error.message);
       }
-
     }
   }
 
@@ -79,7 +82,9 @@ const SignUpForm = () => {
               <FormItem>
                 <div className="flex gap-2 items-center">
                   <FaUser size={25} />
-                  <FormLabel className="text-xl text-primary-foreground">Nome</FormLabel>
+                  <FormLabel className="text-xl text-primary-foreground">
+                    Nome
+                  </FormLabel>
                 </div>
                 <FormControl>
                   <Input
@@ -102,7 +107,9 @@ const SignUpForm = () => {
               <FormItem>
                 <div className="flex gap-2 items-center">
                   <IoMdMail size={25} />
-                  <FormLabel className="text-xl text-primary-foreground">E-mail</FormLabel>
+                  <FormLabel className="text-xl text-primary-foreground">
+                    E-mail
+                  </FormLabel>
                 </div>
                 <FormControl>
                   <Input
@@ -125,7 +132,9 @@ const SignUpForm = () => {
               <FormItem>
                 <div className="flex gap-2 items-center">
                   <TbLock size={30} />
-                  <FormLabel className="text-xl text-primary-foreground">Senha</FormLabel>
+                  <FormLabel className="text-xl text-primary-foreground">
+                    Senha
+                  </FormLabel>
                 </div>
                 <div className="flex gap-2 items-center">
                   <FormControl>
@@ -153,7 +162,9 @@ const SignUpForm = () => {
               <FormItem>
                 <div className="flex gap-2 items-center">
                   <TbLock size={30} />
-                  <FormLabel className="text-xl text-primary-foreground">Confirmar senha</FormLabel>
+                  <FormLabel className="text-xl text-primary-foreground">
+                    Confirmar senha
+                  </FormLabel>
                 </div>
                 <div className="flex gap-2 items-center">
                   <FormControl>
@@ -174,11 +185,12 @@ const SignUpForm = () => {
               </FormItem>
             )}
           />
-        </section>        
+        </section>
         <Button className="bg-primary-foreground text-slate-800 mt-10 hover:text-slate-800/80 hover:bg-primary-foreground/80 w-full">
           Cadastrar
         </Button>
       </form>
+      <Toaster richColors />
     </Form>
   );
 };
