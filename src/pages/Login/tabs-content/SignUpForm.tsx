@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -44,6 +45,15 @@ const SignUpForm = () => {
     },
   });
 
+  useEffect(() => {
+    const error = form.formState.errors;
+
+    error.email && toast.error(error.email?.message);
+    error.password && toast.error(error.password?.message);
+    error.name && toast.error(error.name?.message);
+    error.root && toast.error(error.root?.message);
+  }, [form.formState.errors]);
+
   async function register(data: z.infer<typeof FormSchema>) {
     //Verifies if the passwords fields matches
     if (data.password !== data.confirmPassword) {
@@ -59,9 +69,14 @@ const SignUpForm = () => {
       };
 
       try {
-        const { response, status } = await authService.register(reqObj);        
-        status === 201 && toast.success("Cadastrado com sucesso!");
-        
+        const { status } = await authService.register(reqObj);
+        if (status === 201) {
+          toast.success("Cadastrado com sucesso!");
+          form.setValue("confirmPassword", "");
+          form.setValue("password", "");
+          form.setValue("email", "");
+          form.setValue("name", "");
+        }
       } catch (error: any) {
         toast.error(error.message);
       }

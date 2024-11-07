@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import { useLocation } from "react-router-dom";
+
+import { UserContext } from "@/store/UserContext";
 
 import MenuItem from "./MenuItem";
 import UserSection from "./UserSection";
@@ -6,9 +9,11 @@ import UserSection from "./UserSection";
 import { GoHomeFill } from "react-icons/go";
 import { FaCalendar, FaHandHoldingUsd } from "react-icons/fa";
 import { IoMdInformationCircleOutline } from "react-icons/io";
+import { MdAdminPanelSettings } from "react-icons/md";
 
 const Sidebar = () => {
   const { pathname } = useLocation();
+  const { user } = useContext(UserContext);
 
   return (
     <div className="h-screen w-[350px] fixed hidden left-0 shadow-xl p-4 bg-white lg:flex flex-col justify-between">
@@ -19,6 +24,14 @@ const Sidebar = () => {
         </h1>
       </section>
       <main className="flex flex-col gap-4 h-2/4">
+        {user && user.role === 0 && (
+          <MenuItem
+            text="Admin"
+            icon={MdAdminPanelSettings}
+            linkTo="/admin"
+            focus={pathname === "/admin"}
+          />
+        )}
         <MenuItem
           text="Início"
           icon={GoHomeFill}

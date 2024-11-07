@@ -1,9 +1,8 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { UserAuthContext } from "@/store/UserAuthContext";
 
 import AuthService from "@/services/AuthService";
-
-import { useNavigate } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -35,6 +34,9 @@ const FormSchema = z.object({
 const authService = new AuthService();
 
 const SignInForm = () => {
+  const navigate = useNavigate();
+  const { login: contextLoginMethod } = useContext(UserAuthContext);
+
   //React hook form instance
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -47,7 +49,11 @@ const SignInForm = () => {
   async function login(data: z.infer<typeof FormSchema>) {
     try {
       const { token, user, status } = await authService.login(data);
-      status === 200 && toast.success("Entrou com sucesso!");
+      if (status == 200) {
+        toast.success("Autenticado com sucesso!");
+        contextLoginMethod(user, token);
+        navigate("/");
+      }
     } catch (error: any) {
       toast.error(error.message);
     }

@@ -6,11 +6,17 @@ import { UserContextProvider } from "./store/UserContext.tsx";
 import { UserAuthContextProvider } from "./store/UserAuthContext.tsx";
 
 import App from "./App.tsx";
+import Events from "./pages/User/Events/Events.tsx";
+import Collaborate from "./pages/User/Collaborate/Collaborate.tsx";
+import About from "./pages/User/About/About.tsx";
 import Login from "./pages/Login/Login.tsx";
-import Home from "./pages/Home/Home.tsx";
-import Events from "./pages/Events/Events.tsx";
-import Collaborate from "./pages/Collaborate/Collaborate.tsx";
-import About from "./pages/About/About.tsx";
+import HomeAdmin from "./pages/Admin/HomeAdmin/HomeAdmin.tsx";
+import Home from "./pages/User/Home/Home.tsx";
+import AdminRoute from "./routes/AdminRoute.tsx";
+import NewPost from "./pages/Admin/NewPost/NewPost.tsx";
+import NewEvent from "./pages/Admin/NewEvent/NewEvent.tsx";
+import UserList from "./pages/Admin/UserList/UserList.tsx";
+import EventList from "./pages/Admin/EventList/EventList.tsx";
 
 const router = createBrowserRouter([
   {
@@ -30,9 +36,39 @@ const router = createBrowserRouter([
         path: "/contribuir",
         element: <Collaborate />,
       },
-      { 
+      {
         path: "/sobre-nos",
         element: <About />,
+      },
+    ],
+  },
+  {
+    path: "/admin",
+    element: (
+      <AdminRoute>
+        <App />
+      </AdminRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: <HomeAdmin />,
+      },
+      {
+        path: "novo-post",
+        element: <NewPost />,
+      },
+      {
+        path: "novo-evento",
+        element: <NewEvent />,
+      },
+      {
+        path: "listar-usuarios",
+        element: <UserList />,
+      },
+      {
+        path: "listar-eventos",
+        element: <EventList />,
       },
     ],
   },

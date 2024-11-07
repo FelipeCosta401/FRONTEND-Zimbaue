@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-import zimbaueProfile from "../../Assets/profile.png";
+import zimbaueProfile from "../../../Assets/profile.png";
 
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 
