@@ -17,6 +17,7 @@ import NewPost from "./pages/Admin/NewPost/NewPost.tsx";
 import NewEvent from "./pages/Admin/NewEvent/NewEvent.tsx";
 import UserList from "./pages/Admin/UserList/UserList.tsx";
 import EventList from "./pages/Admin/EventList/EventList.tsx";
+import Awards from "./pages/User/Awards/Awards.tsx";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
         path: "/sobre-nos",
         element: <About />,
       },
+      {
+        path: "/premios",
+        element: <Awards />
+      }
     ],
   },
   {

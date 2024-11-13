@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 import UserService from "@/services/UserService";
 
 import { DataTable } from "./data-table";
@@ -8,11 +10,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import {
   Breadcrumb,
-  BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
@@ -39,11 +39,11 @@ const UserList = () => {
       <Breadcrumb className="font-bold">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/admin">Admin</BreadcrumbLink>
+            <Link to="/admin">Admin</Link>
           </BreadcrumbItem>
           <BreadcrumbSeparator className="" />
           <BreadcrumbItem>
-            <BreadcrumbLink href="/">Lista de eventos</BreadcrumbLink>
+            <Link to="#">Lista de eventos</Link>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

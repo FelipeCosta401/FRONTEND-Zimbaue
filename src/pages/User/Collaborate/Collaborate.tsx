@@ -14,6 +14,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+import FinancialCollaborationDialog from "./FinancialCollaborationDialog";
+import SharingCollaborationDialog from "./SharingCollaborationDialog";
+
 const Collaborate = () => {
   return (
     <>
@@ -29,11 +32,11 @@ const Collaborate = () => {
                 Você pode contribuir com uma pequena quantia em dinheiro
               </CardDescription>
             </CardHeader>
-            <CardFooter className="flex gap-2">
+            <CardFooter className="w-2/3 flex gap-2">
               <Button type="button" variant={"outline"}>
                 Saber mais
               </Button>
-              <Button type="button">Contribuir</Button>
+              <FinancialCollaborationDialog />
             </CardFooter>
           </Card>
           <Card className="h-[200px] w-full flex flex-col justify-between break-inside-avoid">
@@ -47,7 +50,7 @@ const Collaborate = () => {
               <Button type="button" variant={"outline"}>
                 Saber mais
               </Button>
-              <Button type="button">Compartilhar</Button>
+              <SharingCollaborationDialog />
             </CardFooter>
           </Card>
           <Card className="h-[200px] w-full flex flex-col justify-between break-inside-avoid">

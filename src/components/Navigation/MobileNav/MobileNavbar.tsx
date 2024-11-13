@@ -20,7 +20,7 @@ const MobileNavbar = () => {
           text="Início"
           icon={MdAdminPanelSettings}
           linkTo="/admin"
-          focus={pathname === "/admin"}
+          focus={pathname.includes("/admin")}
         />
       )}
       <MenuItem

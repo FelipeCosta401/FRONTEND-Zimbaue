@@ -23,15 +23,19 @@ const UserSection = () => {
   function logout() {
     logoutContextMethod();
     setUser({
+      email: "",
+      createdAt: "",
       name: "",
+      password: "",
+      role: 0,
     });
   }
 
   return (
     <>
       {user && user.name !== "" ? (
-        <div className="w-full h-full space-y-2">
-          <section className="h-1/3 p-2 justify-between flex items-center border rounded-lg hover:bg-background hover:cursor-pointer">
+        <div className="w-full h-auto space-y-2">
+          <section className="p-2 justify-between flex items-center border rounded-lg hover:bg-background hover:cursor-pointer">
             <span className="flex gap-2 items-center">
               <FaUser size={45} />
               <h2>{user.name}</h2>

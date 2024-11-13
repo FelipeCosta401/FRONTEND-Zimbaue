@@ -31,10 +31,17 @@ const About = () => {
                 <AvatarImage src={zimbaueProfile} />
               </Avatar>
               <CardDescription className="text-xl">
-                Sociedade civil de ativismo social sem fins lucrativos que atua
-                em Assis e região no combate a discriminação, racismo e a
-                intolerância, além de estimular o desenvolvimento social e
-                cultural por meio de práticas educacionais e políticas.
+                O Instituto do Negro Zimbauê é uma organização não governamental
+                que tem como objetivo o combate à discriminação, ao racismo e à
+                intolerância, além da promoção da igualdade racial em todos os
+                segmentos. O Instituto visa, também, a divulgação, a promoção, o
+                ensino, a prática, a tradição da cultura afro em todos os seus
+                aspectos e variantes. O Zimbauê é uma instituição sem fins
+                lucrativos, que, há 20 anos, tem auxiliado o município de Assis
+                e região no processo de eliminar a discriminação racial,
+                desenvolvendo atividades que buscam a reconstrução da identidade
+                étnica, da autoestima e cidadania dos afro-brasileiros em um
+                contexto de formação política e educacional.
               </CardDescription>
             </CardContent>
           </Card>

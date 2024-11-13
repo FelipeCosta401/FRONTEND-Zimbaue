@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import EventService from "@/services/EventService";
+import { Link } from "react-router-dom";
 
+import EventService from "@/services/EventService";
 import EventInterface from "@/types/EventInterface";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,11 +11,8 @@ import { DataTable } from "./data-table";
 
 import {
   Breadcrumb,
-  BreadcrumbEllipsis,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
@@ -41,11 +39,11 @@ const EventList = () => {
       <Breadcrumb className="font-bold">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/admin">Admin</BreadcrumbLink>
+            <Link to="/admin">Admin</Link>
           </BreadcrumbItem>
           <BreadcrumbSeparator className="" />
           <BreadcrumbItem>
-            <BreadcrumbLink href="/">Lista de usuários</BreadcrumbLink>
+            <Link to="#">Lista de usuários</Link>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>

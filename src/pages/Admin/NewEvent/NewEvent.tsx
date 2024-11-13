@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 import { UserContext } from "@/store/UserContext";
@@ -33,6 +34,12 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 import { CalendarIcon } from "lucide-react";
 
@@ -79,6 +86,17 @@ const NewEvent = () => {
 
   return (
     <div className="space-y-4">
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <Link to="/admin">Admin</Link>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <Link to="#">Novo evento</Link>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
       <Card>
         <CardHeader>
           <CardTitle>Cadastrar novo evento</CardTitle>

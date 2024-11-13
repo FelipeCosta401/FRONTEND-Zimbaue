@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
 import { UserContext } from "@/store/UserContext";
@@ -27,6 +28,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 const FormSchema = z.object({
   title: z.string().nonempty("Campo título obrigatório"),
@@ -68,6 +75,17 @@ const NewPost = () => {
 
   return (
     <div className="space-y-4">
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <Link to="/admin">Admin</Link>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <Link to="#">Nova publicação</Link>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
       <Card>
         <CardHeader>
           <CardTitle>Cadastrar nova publicação</CardTitle>
