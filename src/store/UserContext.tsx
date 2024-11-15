@@ -10,6 +10,10 @@ interface UserContextItems {
 const UserContext = createContext<UserContextItems>({
   user: {
     name: "",
+    email: "",
+    password: "",
+    createdAt: "",
+    role: 0
   },
   setUserData: () => {},
 });

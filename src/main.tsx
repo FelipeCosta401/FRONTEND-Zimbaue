@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  HashRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 import { createRoot } from "react-dom/client";
 
@@ -43,8 +47,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/premios",
-        element: <Awards />
-      }
+        element: <Awards />,
+      },
     ],
   },
   {

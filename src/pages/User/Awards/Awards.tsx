@@ -15,7 +15,6 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
-import { Separator } from "@/components/ui/separator";
 
 const Awards = () => {
   const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));

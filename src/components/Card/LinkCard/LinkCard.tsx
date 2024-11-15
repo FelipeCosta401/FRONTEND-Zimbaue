@@ -9,7 +9,7 @@ interface LinkCardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const LinkCard = forwardRef<HTMLDivElement, LinkCardProps>(
-  ({ text, icon: Icon, linkTo, className, ...rest }, ref) => (
+  ({ text, icon: Icon, linkTo, className }, ref) => (
     <Link to={linkTo} className={className}>
       <Card
         ref={ref}
