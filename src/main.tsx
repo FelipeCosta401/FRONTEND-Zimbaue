@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        path: "https://felipecosta401.github.io/FRONTEND-Zimbaue/",
         index: true,
         element: <Home />,
       },
