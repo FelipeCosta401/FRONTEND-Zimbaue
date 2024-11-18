@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255, 250, 255;
+    --foreground: 1, 8, 22;
+    --card: 255, 255, 255;
+    --card-foreground: 1, 8, 22;
+    --popover: 255, 255, 255;
+    --popover-foreground: 1, 8, 22;
+    --primary: 169, 159, 49;
+    --primary-foreground: 255, 250, 255;
+    --secondary: 241, 245, 249;
+    --secondary-foreground: 15, 23, 42;
+    --muted: 241, 245, 249;
+    --muted-foreground: 100, 116, 139;
+    --accent: 241, 245, 249;
+    --accent-foreground: 15, 23, 42;
+    --destructive: 238, 68, 68;
+    --destructive-foreground: 247, 249, 251;
+    --border: 226, 232, 240;
+    --input: 226, 232, 240;
+    --ring: 1, 8, 22;
+    --chart-1: 231, 110, 79;
+    --chart-2: 41, 157, 143;
+    --chart-3: 38, 71, 83;
+    --chart-4: 232, 196, 104;
+    --chart-5: 244, 163, 97;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 1, 8, 22;
+    --foreground: 247, 249, 251;
+    --card: 1, 8, 22;
+    --card-foreground: 247, 249, 251;
+    --popover: 1, 8, 22;
+    --popover-foreground: 247, 249, 251;
+    --primary: 247, 249, 251;
+    --primary-foreground: 15, 23, 42;
+    --secondary: 30, 41, 59;
+    --secondary-foreground: 247, 249, 251;
+    --muted: 30, 41, 59;
+    --muted-foreground: 148, 163, 183;
+    --accent: 30, 41, 59;
+    --accent-foreground: 247, 249, 251;
+    --destructive: 127, 29, 29;
+    --destructive-foreground: 247, 249, 251;
+    --border: 30, 41, 59;
+    --input: 30, 41, 59;
+    --ring: 202, 212, 224;
+    --chart-1: 38, 97, 216;
+    --chart-2: 45, 183, 137;
+    --chart-3: 232, 140, 48;
+    --chart-4: 175, 86, 219;
+    --chart-5: 226, 54, 111;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
