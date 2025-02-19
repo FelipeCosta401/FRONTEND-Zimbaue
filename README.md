@@ -2,24 +2,24 @@
 
 Esse projeto representa a parte visual do sistema de gerenciamento de eventos, publicações e contribuições do instituto sem fins lucrativos: Instituto Negro do Zimbaue 
 
-<img src="/public/mockups/feed.png" />
+<div style="display: flex; gap: 16px;">
+    <img style="border-radius: 8px;" src="/public/mockups/feed.png" alt="Mockup do Feed" />
+    <img style="border-radius: 8px;" src="/public/mockups/events.png" alt="Mockup dos Eventos" />
+</div>
 
-## Índice
+## Funcionalidades
 
-- [Instalação](#instalação)
-- [Uso](#uso)
-- [Configuração](#configuração)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
-- [Contato](#contato)
+- Controle de usuários
+- Publicações diárias
+- Gerenciamento de eventos
+- Exibição e cadastro de títulos de premiações
+- Página destinada a detalhar as opções de contribuição
 
 ## Instalação
 
-Instruções detalhadas sobre como instalar e configurar o projeto localmente. Inclua comandos específicos e exemplos.
-
 ```bash
-# Exemplo de comando para clonar o repositório
-git clone https://github.com/seu-usuario/seu-projeto.git
+# Clone o repositório
+git clone https://github.com/FelipeCosta401/FRONTEND-Zimbaue.git
 
 # Navegue até o diretório do projeto
 cd seu-projeto
