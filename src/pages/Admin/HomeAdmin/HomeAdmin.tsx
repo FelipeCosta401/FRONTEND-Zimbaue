@@ -15,13 +15,13 @@ const HomeAdmin = () => {
             className="w-full"
             text="Ver usuários"
             icon={HiUserGroup}
-            linkTo="/FRONTEND-Zimbaue/admin/listar-usuarios"
+            linkTo="/admin/listar-usuarios"
           />
           <LinkCard
             className="w-full"
             text="Ver eventos"
             icon={MdOutlineEventNote}
-            linkTo="/FRONTEND-Zimbaue/admin/listar-eventos"
+            linkTo="/admin/listar-eventos"
           />
         </div>
         <LinkCard
@@ -37,13 +37,13 @@ const HomeAdmin = () => {
           className="w-full"
           text="Novo evento"
           icon={FaRegCalendarPlus}
-          linkTo="/FRONTEND-Zimbaue/admin/novo-evento"
+          linkTo="/admin/novo-evento"
         />
         <LinkCard
           className="w-full"
           text="Nova publicação"
           icon={BsFillClipboard2PlusFill}
-          linkTo="/FRONTEND-Zimbaue/admin/novo-post"
+          linkTo="/admin/novo-post"
         />
       </section>
     </div>

@@ -52,7 +52,7 @@ const SignInForm = () => {
       if (status == 200) {
         toast.success("Autenticado com sucesso!");
         contextLoginMethod(user, token);
-        navigate("/FRONTEND-Zimbaue/");
+        navigate("/");
       }
     } catch (error: any) {
       toast.error(error.message);

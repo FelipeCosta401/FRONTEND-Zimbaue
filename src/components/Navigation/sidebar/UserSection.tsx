@@ -48,7 +48,7 @@ const UserSection = () => {
         </div>
       ) : (
         <div className="w-full h-full flex flex-col gap-2">
-          <Button variant={"outline"} onClick={() => navigate("/FRONTEND-Zimbaue/login")}>
+          <Button variant={"outline"} onClick={() => navigate("/login")}>
             Cadastrar
           </Button>
         </div>

@@ -89,7 +89,7 @@ const NewEvent = () => {
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <Link to="/FRONTEND-Zimbaue/admin">Admin</Link>
+            <Link to="/admin">Admin</Link>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>

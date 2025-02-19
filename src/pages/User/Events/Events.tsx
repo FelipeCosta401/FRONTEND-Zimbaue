@@ -60,7 +60,7 @@ const Events = () => {
               </span>
               <span className="block">
                 <p className="text-lg font-medium">Em andamento</p>
-                <h3 className="text-xl xl:text-2xl font-semibold">{events.length - 2}</h3>
+                <h3 className="text-xl xl:text-2xl font-semibold">{events.length - 1}</h3>
               </span>
             </div>
             <div className="w-full sm:w-1/3 flex gap-2 items-center">
@@ -69,22 +69,22 @@ const Events = () => {
               </span>
               <span className="block">
                 <p className="text-lg font-medium">Concluidos</p>
-                <h3 className="text-xl xl:text-2xl font-semibold">{events.length - 3}</h3>
+                <h3 className="text-xl xl:text-2xl font-semibold">{events.length - 1}</h3>
               </span>
             </div>
           </CardContent>
         </Card>
       </header>
-      <main className="h-[350px]">
+      <main className="h-[450px]">
         {events.length > 1 ? (
-          <Carousel className="h-full">
-            <CarouselContent>
+          <Carousel className="h-full ">
+            <CarouselContent className="h-[450px]">
               {events.map((event) => (
                 <CarouselItem
                   className="basis-[72%] xl:basis-[42%]"
                   key={event.id}
                 >
-                  <Card className="h-[350px] w-full">
+                  <Card className="h-[400px] w-full">
                     <CardHeader
                       className="h-1/2 rounded-lg m-2"
                       style={{

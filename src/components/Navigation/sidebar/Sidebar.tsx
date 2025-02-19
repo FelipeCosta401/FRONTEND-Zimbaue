@@ -27,11 +27,11 @@ const Sidebar = () => {
       <main className="flex flex-col gap-4 h-2/4">
         <MenuItem
           text="Premiações"
-          linkTo="/FRONTEND-Zimbaue/premios"
+          linkTo="/premios"
           focus={false}
           icon={FaTrophy}
           className={cn(
-            `${pathname !== "/FRONTEND-Zimbaue/premios" && "animate-pulse"}`,
+            `${pathname !== "/premios" && "animate-pulse"}`,
             "bg-gradient-to-r from-[#A99531] to-[#8E4646] text-primary-foreground transition-all hover:scale-105"
           )}
         />
@@ -39,33 +39,33 @@ const Sidebar = () => {
           <MenuItem
             text="Admin"
             icon={MdAdminPanelSettings}
-            linkTo="/FRONTEND-Zimbaue/admin"
-            focus={pathname.includes("/FRONTEND-Zimbaue/admin")}
+            linkTo="/admin"
+            focus={pathname.includes("/admin")}
           />
         )}
         <MenuItem
           text="Início"
           icon={GoHomeFill}
-          linkTo="/FRONTEND-Zimbaue/"
-          focus={pathname === "/FRONTEND-Zimbaue/"}
+          linkTo="/"
+          focus={pathname === "/"}
         />
         <MenuItem
           text="Eventos"
           icon={FaCalendar}
-          linkTo="/FRONTEND-Zimbaue/eventos"
-          focus={pathname === "/FRONTEND-Zimbaue/eventos"}
+          linkTo="/eventos"
+          focus={pathname === "/eventos"}
         />
         <MenuItem
           text="Contribuir"
           icon={FaHandHoldingUsd}
-          linkTo="/FRONTEND-Zimbaue/contribuir"
-          focus={pathname === "/FRONTEND-Zimbaue/contribuir"}
+          linkTo="/contribuir"
+          focus={pathname === "/contribuir"}
         />
         <MenuItem
           text="Sobre nós"
           icon={IoMdInformationCircleOutline}
-          linkTo="/FRONTEND-Zimbaue/sobre-nos"
-          focus={pathname === "/FRONTEND-Zimbaue/sobre-nos"}
+          linkTo="/sobre-nos"
+          focus={pathname === "/sobre-nos"}
         />
       </main>
       <footer className="h-1/4 flex flex-col justify-end">

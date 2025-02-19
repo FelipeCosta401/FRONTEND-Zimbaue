@@ -21,34 +21,34 @@ import Awards from "./pages/User/Awards/Awards.tsx";
 
 const router = createBrowserRouter([
   {
-    path: "/FRONTEND-Zimbaue/",
+    path: "/",
     element: <App />,
     children: [
       {
-        path: "/FRONTEND-Zimbaue/",
+        path: "/",
         index: true,
         element: <Home />,
       },
       {
-        path: "/FRONTEND-Zimbaue/eventos",
+        path: "/eventos",
         element: <Events />,
       },
       {
-        path: "/FRONTEND-Zimbaue/contribuir",
+        path: "/contribuir",
         element: <Collaborate />,
       },
       {
-        path: "/FRONTEND-Zimbaue/sobre-nos",
+        path: "/sobre-nos",
         element: <About />,
       },
       {
-        path: "/FRONTEND-Zimbaue/premios",
+        path: "/premios",
         element: <Awards />,
       },
     ],
   },
   {
-    path: "/FRONTEND-Zimbaue/admin/",
+    path: "/admin",
     element: (
       <AdminRoute>
         <App />
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/FRONTEND-Zimbaue/login",
+    path: "/login",
     element: <Login />,
   },
 ]);

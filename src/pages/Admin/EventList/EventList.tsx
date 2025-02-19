@@ -39,7 +39,7 @@ const EventList = () => {
       <Breadcrumb className="font-bold">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <Link to="/FRONTEND-Zimbaue/admin">Admin</Link>
+            <Link to="/admin">Admin</Link>
           </BreadcrumbItem>
           <BreadcrumbSeparator className="" />
           <BreadcrumbItem>
